@@ -142,8 +142,8 @@ cd ..
 # Generate Prisma Client
 npm run prisma:generate
 
-# Run migrations to setup database schema
-npm run prisma:migrate
+# Sync schema to PostgreSQL (Supabase)
+npx prisma db push
 
 # Seed the database with sample data
 npm run seed
@@ -193,4 +193,4 @@ The application utilizes a custom-built premium design system defined in `client
 
 ## 📜 License
 
-VaultFlow Proprietary System. All rights reserved.
+VaultFlow Proprietary System. All rights reserved by priyanshi gupta.
