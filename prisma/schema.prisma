@@ -1,0 +1,41 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Role: VIEWER, ANALYST, ADMIN
+// UserStatus: ACTIVE, INACTIVE
+// TransactionType: INCOME, EXPENSE
+
+model User {
+  id        String            @id @default(uuid())
+  email     String            @unique
+  password  String
+  name      String?
+  role      String            @default("VIEWER")
+  status    String            @default("ACTIVE")
+  records   FinancialRecord[]
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+}
+
+model FinancialRecord {
+  id          String   @id @default(uuid())
+  amount      Float
+  type        String   // INCOME, EXPENSE
+  category    String
+  date        DateTime @default(now())
+  description String?
+  isDeleted   Boolean  @default(false)
+  deletedAt   DateTime?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

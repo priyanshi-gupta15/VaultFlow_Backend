@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.db
+*.db-journal
+dist/
+build/
+.next/
+prisma/migrations/
+prisma/dev.db
+prisma_error.txt
+test-connection.js
+node_modules
