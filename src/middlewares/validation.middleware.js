@@ -1,5 +1,4 @@
 // src/middlewares/validation.middleware.js
-import AppError from '../utils/AppError.js';
 
 const validate = (schema) => (req, res, next) => {
   try {
@@ -10,8 +9,14 @@ const validate = (schema) => (req, res, next) => {
     });
     next();
   } catch (error) {
-    const message = error.errors.map((i) => i.message).join(', ');
-    return next(new AppError(message, 400));
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Validation failed',
+      errors: error.errors.map((err) => ({
+        field: err.path.join('.'),
+        message: err.message,
+      })),
+    });
   }
 };
 

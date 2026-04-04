@@ -1,6 +1,12 @@
 // src/controllers/finance.controller.js
 import financeService from '../services/finance.service.js';
 
+/**
+ * Retrieves all financial records with filtering and pagination.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const getAllRecords = async (req, res, next) => {
   try {
     const result = await financeService.getAllRecords(req.query, req.user);
@@ -18,6 +24,12 @@ const getAllRecords = async (req, res, next) => {
   }
 };
 
+/**
+ * Creates a new financial record.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const createRecord = async (req, res, next) => {
   try {
     const record = await financeService.createRecord(req.body, req.user.id);
@@ -33,6 +45,12 @@ const createRecord = async (req, res, next) => {
   }
 };
 
+/**
+ * Updates an existing financial record by ID.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const updateRecord = async (req, res, next) => {
   try {
     const record = await financeService.updateRecord(req.params.id, req.body);
@@ -48,6 +66,12 @@ const updateRecord = async (req, res, next) => {
   }
 };
 
+/**
+ * Soft-deletes a financial record by ID.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const deleteRecord = async (req, res, next) => {
   try {
     await financeService.deleteRecord(req.params.id);
@@ -62,6 +86,12 @@ const deleteRecord = async (req, res, next) => {
   }
 };
 
+/**
+ * Generates a comprehensive financial summary for the dashboard.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const getSummary = async (req, res, next) => {
   try {
     const summary = await financeService.getSummary();
@@ -76,6 +106,7 @@ const getSummary = async (req, res, next) => {
     next(err);
   }
 };
+
 
 export default {
   getAllRecords,

@@ -4,12 +4,22 @@ import jwt from 'jsonwebtoken';
 import prisma from '../prisma.js';
 import AppError from '../utils/AppError.js';
 
+/**
+ * Generates a signed JWT token for a user ID.
+ * @param {string} id - The user ID to sign.
+ * @returns {string} - The JWT token.
+ */
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: '90d',
   });
 };
 
+/**
+ * Registers a new user and returns user data with an auth token.
+ * @param {Object} userData - Incoming user registration data.
+ * @returns {Promise<{user: Object, token: string}>}
+ */
 const register = async (userData) => {
   const { email, password, name, role } = userData;
 
@@ -47,6 +57,12 @@ const register = async (userData) => {
   return { user: newUser, token };
 };
 
+/**
+ * Authenticates a user and returns user data with an auth token.
+ * @param {string} email
+ * @param {string} password
+ * @returns {Promise<{user: Object, token: string}>}
+ */
 const login = async (email, password) => {
   // Check if email and password exist
   if (!email || !password) {
@@ -70,5 +86,6 @@ const login = async (email, password) => {
 
   return { user: userWithoutPassword, token };
 };
+
 
 export default { register, login };

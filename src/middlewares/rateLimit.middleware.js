@@ -1,9 +1,7 @@
-// src/middlewares/rateLimit.middleware.js
-
-// Simple in-memory rate limiter (no external deps needed)
-const requestCounts = new Map();
-
 const rateLimit = ({ windowMs = 15 * 60 * 1000, max = 100, message = 'Too many requests, please try again later.' } = {}) => {
+  // Each limiter instance now has its own isolated memory
+  const requestCounts = new Map();
+
   // Clean up expired entries periodically
   setInterval(() => {
     const now = Date.now();
