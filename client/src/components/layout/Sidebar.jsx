@@ -52,10 +52,10 @@ const Sidebar = () => {
       {/* Logo Section */}
       <div className="p-8 flex items-center gap-4">
         <motion.div 
-          whileHover={{ rotate: 180 }}
-          className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/40 glow-indigo cursor-pointer"
+          whileHover={{ scale: 1.1 }}
+          className="w-12 h-12 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-indigo-500/20 cursor-pointer"
         >
-          <TrendingUp className="text-white" size={28} />
+          <img src="/assets/logo.png" alt="VaultFlow Logo" className="w-full h-full object-contain" />
         </motion.div>
         <div>
           <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-none">
