@@ -12,7 +12,7 @@ const server = app.listen(port, () => {
 🚀 VaultFlow API is running!
 📡 URL: http://localhost:${port}
 🛠️  Environment: ${process.env.NODE_ENV || 'development'}
-🔒 Database: PostgreSQL (Supabase)
+🔒 Database: SQLite (Local)
 📝 API Docs: http://localhost:${port}/api
   `);
 });
