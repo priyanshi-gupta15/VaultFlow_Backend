@@ -1,10 +1,10 @@
-# 🌌 VaultFlow: Premium Finance Intelligence
+# VaultFlow: Premium Finance Intelligence
 
 VaultFlow is a professional-grade financial management platform designed for clarity, precision, and strategic insight. It features a sophisticated dark-mode aesthetic with glassmorphism, smooth Framer Motion animations, and real-time data visualization.
 
 ---
 
-## 💎 Core Features
+## Core Features
 
 - **Strategic Dashboard**: Multi-dimensional overview of capital flows with interactive charts (Pie/Bar charts with Recharts).
 - **Audit-Ready Ledger**: Records page with pagination, search, filtering, and staggered entrance animations.
@@ -17,7 +17,7 @@ VaultFlow is a professional-grade financial management platform designed for cla
 
 ---
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 - **Frontend**: React (Vite), Tailwind CSS, Framer Motion, Recharts, Lucide Icons.
 - **Backend**: Node.js, Express, Prisma ORM, Zod validation, JWT authentication.
@@ -26,7 +26,7 @@ VaultFlow is a professional-grade financial management platform designed for cla
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 PriyanshiGupta_Backend/
@@ -77,7 +77,7 @@ PriyanshiGupta_Backend/
 
 ---
 
-## 🔐 API Endpoints
+## API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description | Access |
@@ -111,7 +111,7 @@ PriyanshiGupta_Backend/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - Node.js (v18+)
@@ -142,7 +142,7 @@ cd ..
 # Generate Prisma Client
 npm run prisma:generate
 
-# Sync schema to PostgreSQL (Supabase)
+# Sync schema to SQLite Database
 npx prisma db push
 
 # Seed the database with sample data
@@ -161,7 +161,7 @@ npm run dev
 
 ---
 
-## 🛠️ Useful Prisma Commands
+## Useful Prisma Commands
 
 During development, you may find these commands helpful:
 - **View Database**: `npx prisma studio` (Opens a web-based GUI to view/edit data)
@@ -170,7 +170,7 @@ During development, you may find these commands helpful:
 
 ---
 
-## 🔐 Default Credentials
+## Default Credentials
 
 | Role | Email | Password |
 |------|-------|----------|
@@ -180,7 +180,7 @@ During development, you may find these commands helpful:
 
 ---
 
-## 🎨 Design System
+## Design System
 
 The application utilizes a custom-built premium design system defined in `client/src/index.css`:
 - **Glassmorphism**: `.glass-card` - Frosted glass effect with backdrop blur
@@ -191,6 +191,6 @@ The application utilizes a custom-built premium design system defined in `client
 
 ---
 
-## 📜 License
+## License
 
 VaultFlow Proprietary System. All rights reserved by priyanshi gupta.
